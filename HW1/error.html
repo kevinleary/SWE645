@@ -13,7 +13,7 @@
 <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display: none; width: 100%; font-size: 40px; padding-top: 10%;" id="mySidebar">
   <h1 class="w3-xxxlarge w3-text-theme">Site Navigation</h1>
   <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
-  <a href="https://www.w3schools.com/w3css/tryw3css_templates_black.htm#" class="w3-bar-item w3-button">Home <i class="fa fa-home"></i></a>
+  <a href="index.html" class="w3-bar-item w3-button">Home <i class="fa fa-home"></i></a>
 </nav>
 
 <!-- Header -->
@@ -27,3 +27,17 @@
     </div> -->
   </div>
 </header>
+
+<script>
+// Side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "100%";
+  x.style.fontSize = "40px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
