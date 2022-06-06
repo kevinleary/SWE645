@@ -59,23 +59,32 @@
 			<input type="radio" id="liked" name="interest" value="Other">
 			<label for="interest"> Other</label>
 		</fieldset>
-	
+	<br><br><br>
+		<label for="interest">Likelihood to recommend to prospective students?</label>
+		<fieldset>
+			<legend>Recommendation:</legend>
+			<select name="recommend" id="recommend">
+				<option value="vlikely">Very Likely</option>
+				<option value="likely">Likely</option>
+				<option value="nlikely">Not Likely</option>
+			</select>
+		</fieldset>
+	<br><br><br>
+		<label for="raffle">Movie Ticket Raffle!</label>
+		<fieldset>
+			<textarea id="raffle" name="raffle" rows="4" cols="50">Enter 10 comma separated numbers from 1 to 100!
+			</textarea>
+		</fieldset>
+	<br><br><br>
+		<label for="comments">Additional Comments</label>
+		<fieldset>
+			<textarea id="comments" name="comments" rows="4" cols="50">Anything else you want to add...
+			</textarea>
+		</fieldset>
 	<br><br><br>
 	<input type="submit" value="Submit">
+	<button type="button" id="cancelbtn" onClick="location.href=location.href">Cancel</button>
 	</form>
 </body>
 
 </html>
-
-
-<!-- Need to add 
-
-  1. CSS stylesheet fleshed out
-  2. Text boxes for first name, last name, street address, city, state, zip, telephone number, e-mail, and
-	date of survey, which are required fields. 
-  3. Checkboxes that allow prospective students to indicate what they liked most about the campus. The
-	checkboxes should include: students, location, campus, atmosphere, dorm rooms, and sports.
-  4. Radio buttons that allow the prospective students to indicate how they became interested in the
-	university. Options should include: friends, television, Internet, and other.
-  
--->
