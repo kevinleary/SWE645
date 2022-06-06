@@ -2,21 +2,69 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>test</title>
+<title>Student Survey</title>
+<link rel="stylesheet" href="hw1p2.css">
 </head>
 <body>
-	<h1>Fuck you class</h1>
-	<form>
-  		<label for="fname">First name:</label><br>
-  		<input type="text" id="fname" name="fname" value="John"><br>
-  		<label for="lname">Last name:</label><br>
-  		<input type="text" id="lname" name="lname" value="Doe"><br><br>
-  		<label for="address">Street address:</label><br>
-  		<input type="text" id="address" name="address" value="123 Random Blvd"><br>
-  		<label for="city">City:</label><br>
-  		<input type="text" id="address" name="address" value="123 Random Blvd">
+	<h1>Required Class Survey</h1>
+	<form action="thankyou.html" method="post">
+		<fieldset>
+			<legend>Student Information:</legend>
+  			<label for="fname">First name:</label><br>
+  			<input type="text" id="fname" name="fname" value="John" required><br>
+  			<label for="lname">Last name:</label><br>
+  			<input type="text" id="lname" name="lname" value="Doe" required><br><br>
+  			<label for="address">Street address:</label><br>
+  			<input type="text" id="address" name="address" value="123 Random Blvd" required><br>
+  			<label for="city">City:</label><br>
+  			<input type="text" id="city" name="city" value="Arlington" required><br>
+  			<label for="state">State:</label><br>
+  			<input type="text" id="state" name="state" value="Virginia" required><br>
+   			<label for="zip">Zip Code:</label><br>
+  			<input type="text" id="zip" name="zip" value="11011" required><br><br>
+  			<label for="number">Phone Number:</label><br>
+  			<input type="tel" id="number" name="number" value="800-888-6969" required><br>
+    		<label for="email">Email:</label><br>
+  			<input type="email" id="email" name="email" value="example@gmail.com" required><br>
+   			<label for="date">Current Date:</label><br>
+  			<input type="date" id="date" name="date" value="06/05/2022" required><br>
+  		</fieldset>
+	<br><br><br>
+		<label for="liked">What did you like most about the class?</label>
+		<fieldset>
+			<legend>Student liked most:</legend>
+			<input type="checkbox" id="liked" name="liked" value="Students">
+			<label for="liked"> Students</label>
+			<input type="checkbox" id="liked" name="liked" value="Location">
+			<label for="liked"> Location</label>
+			<input type="checkbox" id="liked" name="liked" value="Campus">
+			<label for="liked"> Campus</label>
+			<input type="checkbox" id="liked" name="liked" value="Atmosphere">
+			<label for="liked"> Atmosphere</label>
+			<input type="checkbox" id="liked" name="liked" value="Dorm Rooms">
+			<label for="liked"> Dorm Rooms</label>
+			<input type="checkbox" id="liked" name="liked" value="Sports">
+			<label for="liked"> Sports</label>
+		</fieldset>
+	<br><br><br>
+		<label for="interest">How did you become interested in the university?</label>
+		<fieldset>
+			<legend>Interest:</legend>
+			<input type="radio" id="liked" name="interest" value="Friends">
+			<label for="interest"> Friends</label>
+			<input type="radio" id="liked" name="interest" value="Television">
+			<label for="interest"> Television</label>
+			<input type="radio" id="liked" name="interest" value="Internet">
+			<label for="interest"> Internet</label>
+			<input type="radio" id="liked" name="interest" value="Other">
+			<label for="interest"> Other</label>
+		</fieldset>
+	
+	<br><br><br>
+	<input type="submit" value="Submit">
 	</form>
 </body>
+
 </html>
 
 
