@@ -1,2 +1,3 @@
-swe645-tomcat.pem
+*.pem
 cluster.rkestate
+*password.txt
