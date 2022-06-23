@@ -41,6 +41,30 @@ docker run -d --name=rancher --restart=unless-stopped \
   rancher/rancher:latest
   ```
 
+  ```bash
+docker run -d --name=rancher --restart=unless-stopped \
+  -p 8080:80 -p 8443:443 \
+  --privileged \
+  rancher/rancher:latest
+  ```
+
 aws public 
 
-ec2-54-87-46-136.compute-1.amazonaws.com
+https://ec2-52-87-185-54.compute-1.amazonaws.com
+
+
+```bash
+sudo docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run  rancher/rancher-agent:v2.6.5 --server https://ec2-52-87-185-54.compute-1.amazonaws.com --token 6gxkz2r7nqq54j5w49g9xxkk67jwnfcs8g5bqnzckxqmmmww7c6dmq --ca-checksum 91e787b89952dcd3199783ec062b95f39ddf404ca85ac1b9b4a4528339631978 --etcd --controlplane --worker
+```
+
+EC2 public IPv4 changes everytime it's restarted?
+
+Tried to do this on a single node found this - didn't work 
+https://rancher.com/docs/rancher/v2.6/en/installation/other-installation-methods/single-node-docker/
+
+
+added my container from docker hub @ kleary5/hw2p1-tomcat:0.1.1
+
+had a problem with the image built on my M1 chip mac 
+
+--platform linux/x86_64
