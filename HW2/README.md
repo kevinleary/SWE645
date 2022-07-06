@@ -63,8 +63,14 @@ Tried to do this on a single node found this - didn't work
 https://rancher.com/docs/rancher/v2.6/en/installation/other-installation-methods/single-node-docker/
 
 
-added my container from docker hub @ kleary5/hw2p1-tomcat:0.1.1
+added my container from docker hub @ kleary5/hw2p1-tomcat:0.1.3
 
 had a problem with the image built on my M1 chip mac 
 
---platform linux/x86_64
+--platform linux/x86_64 
+
+http://ec2-54-221-147-148.compute-1.amazonaws.com:31966/hw1p2/
+
+issue with channing ec2 instances
+
+https://github.com/rancher/rancher/issues/21926#issuecomment-517620288

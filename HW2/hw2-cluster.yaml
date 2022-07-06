@@ -1,0 +1,133 @@
+apiVersion: provisioning.cattle.io/v1
+kind: Cluster
+metadata:
+  annotations:
+    field.cattle.io/creatorId: system:admin
+    objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4yQy2rzMBCFX+Vn1nZ+p05zEXRRSumi277AeDRK1MgjI41dqPG7FyeBBkovy4FvDt85I7SsaFERzAgoEhXVR8nzGZtXJs2si+TjglA18MLH/96CgS7FwWcfxcu+pNBn5VRSYlSG4tvX+Cacyv1wBAMtCu65ZdErYKiLf89e7N3DOfLXLMGWwQCVee3eV3/Cc4c0/8BUwMnYR3nxLWfFtgMjfQgFBGw4/DjDAfMBDCwrXDnXbLY3m+a2pqbm1RLdbrlGomrdkKuq7a4mhOK8meX0GQIG0pFnkS89rk1dYNbSssM+6Eznjml2C5EwXKa67/XwKLaLXhTMOM2YovaXEpnTwPaJhdOpMZhqmj4CAAD//8+XkhcAAgAA
+    objectset.rio.cattle.io/id: provisioning-cluster-create
+    objectset.rio.cattle.io/owner-gvk: management.cattle.io/v3, Kind=Cluster
+    objectset.rio.cattle.io/owner-name: c-s6fz4
+    objectset.rio.cattle.io/owner-namespace: ""
+  creationTimestamp: "2022-06-22T23:47:32Z"
+  finalizers:
+  - wrangler.cattle.io/provisioning-cluster-remove
+  - wrangler.cattle.io/rke-cluster-remove
+  generation: 1
+  labels:
+    objectset.rio.cattle.io/hash: 10a4ffb7827b53cb3e41af916acc06bcf00893ca
+    provider.cattle.io: rke
+  managedFields:
+  - apiVersion: provisioning.cattle.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:agentDeployed: {}
+        f:clientSecretName: {}
+        f:clusterName: {}
+        f:conditions: {}
+        f:observedGeneration: {}
+        f:ready: {}
+    manager: rancher
+    operation: Update
+    subresource: status
+    time: "2022-06-23T00:00:44Z"
+  - apiVersion: provisioning.cattle.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:objectset.rio.cattle.io/applied: {}
+          f:objectset.rio.cattle.io/id: {}
+          f:objectset.rio.cattle.io/owner-gvk: {}
+          f:objectset.rio.cattle.io/owner-name: {}
+          f:objectset.rio.cattle.io/owner-namespace: {}
+        f:finalizers:
+          .: {}
+          v:"wrangler.cattle.io/provisioning-cluster-remove": {}
+          v:"wrangler.cattle.io/rke-cluster-remove": {}
+        f:labels:
+          .: {}
+          f:objectset.rio.cattle.io/hash: {}
+          f:provider.cattle.io: {}
+      f:spec:
+        .: {}
+        f:localClusterAuthEndpoint: {}
+    manager: rancher
+    operation: Update
+    time: "2022-06-23T00:00:45Z"
+  name: c-s6fz4
+  namespace: fleet-default
+  resourceVersion: "62079"
+  uid: 4fc62ad1-d481-43dd-a0f8-43671d6d02c7
+spec:
+  localClusterAuthEndpoint: {}
+status:
+  agentDeployed: true
+  clientSecretName: c-s6fz4-kubeconfig
+  clusterName: c-s6fz4
+  conditions:
+  - status: "True"
+    type: Pending
+  - lastUpdateTime: "2022-06-23T00:00:42Z"
+    status: "True"
+    type: Waiting
+  - lastUpdateTime: "2022-06-22T23:47:31Z"
+    status: "True"
+    type: BackingNamespaceCreated
+  - lastUpdateTime: "2022-06-22T23:47:31Z"
+    status: "True"
+    type: DefaultProjectCreated
+  - lastUpdateTime: "2022-06-22T23:47:31Z"
+    status: "True"
+    type: SystemProjectCreated
+  - lastUpdateTime: "2022-06-22T23:47:31Z"
+    status: "True"
+    type: InitialRolesPopulated
+  - lastUpdateTime: "2022-06-22T23:47:31Z"
+    status: "True"
+    type: CreatorMadeOwner
+  - lastUpdateTime: "2022-06-22T23:47:32Z"
+    status: "True"
+    type: NoDiskPressure
+  - lastUpdateTime: "2022-06-22T23:47:32Z"
+    status: "True"
+    type: NoMemoryPressure
+  - lastUpdateTime: "2022-06-22T23:47:32Z"
+    status: "True"
+    type: SecretsMigrated
+  - lastUpdateTime: "2022-06-23T00:00:44Z"
+    status: "False"
+    type: Reconciling
+  - lastUpdateTime: "2022-06-22T23:47:32Z"
+    status: "False"
+    type: Stalled
+  - lastUpdateTime: "2022-06-27T12:09:37Z"
+    status: "True"
+    type: Created
+  - lastUpdateTime: "2022-06-22T23:47:32Z"
+    status: "True"
+    type: RKECluster
+  - lastUpdateTime: "2022-06-27T12:09:06Z"
+    status: "False"
+    type: Connected
+  - lastUpdateTime: "2022-06-27T12:09:06Z"
+    message: Cluster agent is not connected
+    reason: Disconnected
+    status: "False"
+    type: Ready
+  - lastUpdateTime: "2022-06-23T00:00:20Z"
+    status: "True"
+    type: SystemAccountCreated
+  - lastUpdateTime: "2022-06-23T00:00:23Z"
+    status: "True"
+    type: AgentDeployed
+  - lastUpdateTime: "2022-06-23T00:00:39Z"
+    status: "True"
+    type: ServiceAccountMigrated
+  - lastUpdateTime: "2022-06-23T00:00:45Z"
+    status: "True"
+    type: GlobalAdminsSynced
+  observedGeneration: 1
+  ready: true
