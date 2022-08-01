@@ -1,0 +1,68 @@
+<h1>Student Survey</h1>
+
+<form [formGroup]="profileForm">
+    <h2>Name</h2>
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName">
+    <br>
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName">
+
+  <div formGroupName="address">
+    <h2>Address</h2>
+  
+    <label for="street">Street: </label>
+    <input id="street" type="text" formControlName="street">
+    <br>
+    <label for="city">City: </label>
+    <input id="city" type="text" formControlName="city">
+    <br>
+    <label for="state">State: </label>
+    <input id="state" type="text" formControlName="state">
+    <br>
+    <label for="zip">Zip Code: </label>
+    <input id="zip" type="text" formControlName="zip">
+  </div>
+
+  <h2>Contact</h2>
+  <label for="phone">Phone: </label>
+  <input id="phone" type="text" formControlName="phone">
+  <br>
+  <label for="email">Email: </label>
+  <input id="email" type="text" formControlName="email">
+  <br>
+  <label for="date">Date: </label>
+  <input id="date" type="date" formControlName="date">
+  <br>
+
+  <h2 for="liked">What did you like most about the class?</h2>
+  <legend>Student liked most:</legend>
+  <div *ngFor="let c of checkboxes">
+    <input type="checkbox" (change)="onChangeCheckbox(c.name, $event.target.checked)"> {{c.name}}<br>
+  </div>  
+
+  <h2 for="interest">How did you become interested in the university?</h2>
+  <legend>Interest:</legend>
+  <div *ngFor="let r of radio">
+    <input type="radio" name=rad (change)="onChangeRadio(r.name, $event.target.checked)"> {{r.name}}<br>
+  </div> 
+
+  <h2 for="recommend">Likelihood to recommend to prospective students?</h2>
+  <legend>Recommendation:</legend>
+  <select name="recommend" id="recommend" formControlName="recommend">
+    <option value="very-likely">Very Likely</option>
+    <option value="likely">Likely</option>
+    <option value="not-likely">Not Likely</option>
+  </select>
+
+</form>
+
+<p>Complete the form to enable button.</p>
+<button type="submit" [disabled]="!profileForm.valid" (click)="onSubmit()">Submit</button>
+<button type="button" id="cancelbtn" onClick="location.href=location.href">Cancel</button>
+
+<!-- <button type="button" (click)="updateProfile()">Update Profile</button> -->
+
+<p>Form Value: {{ profileForm.value | json }}</p>
+
+<p>Form Status: {{ profileForm.status }}</p>
