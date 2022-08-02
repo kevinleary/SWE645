@@ -16,3 +16,4 @@ https://medium.com/@majdasab/integrating-an-angular-project-with-spring-boot-e3a
 
 https://www.geeksforgeeks.org/initialize-an-arraylist-in-java/
 
+https://www.baeldung.com/spring-boot-angular-web
