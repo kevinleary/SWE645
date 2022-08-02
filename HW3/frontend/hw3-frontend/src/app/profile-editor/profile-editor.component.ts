@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { StudentService } from '../student-service.service';
+import { Student } from '../student';
 
 @Component({
   selector: 'app-profile-editor',
@@ -7,6 +10,9 @@ import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@ang
   styleUrls: ['./profile-editor.component.css']
 })
 export class ProfileEditorComponent {
+
+  student: Student;
+
   profileForm = this.fb.group({
     firstName: ['', Validators.required],
     lastName: ['',  Validators.required],
@@ -21,8 +27,7 @@ export class ProfileEditorComponent {
     date: ['', Validators.required],
     liked: this.fb.array([
     ]),
-    interested: this.fb.array([
-    ]),
+    interested: [''],
     recommend: [''],
     aliases: this.fb.array([
       this.fb.control('')
@@ -51,10 +56,39 @@ export class ProfileEditorComponent {
     { name: 'Not Likely'}
   ]
 
-  constructor(private fb: FormBuilder) { }
-
+  constructor(private fb: FormBuilder, 
+    private route: ActivatedRoute, 
+    private router: Router, 
+    private studentService: StudentService) { 
+      this.student = new Student();
+  }
+  
   onSubmit() {
     console.warn(this.profileForm.value);
+    // this.studentService.save(this.profileForm).subscribe(result => this.gotoStudentList());
+    // let student = {...this.profileForm.value}
+    // this.student.id = Math.floor(Math.random() * 1000000) + 1; //random ids
+    this.student.firstName = this.profileForm.value.firstName
+    this.student.lastName = this.profileForm.value.lastName
+    this.student.street = this.profileForm.value.address.street
+    this.student.city = this.profileForm.value.address.city
+    this.student.state = this.profileForm.value.address.state
+    this.student.zip = this.profileForm.value.address.zip
+    this.student.phone = this.profileForm.value.phone
+    this.student.email = this.profileForm.value.email
+    this.student.date = this.profileForm.value.date
+    this.student.liked = this.profileForm.value.liked
+    this.student.interested = this.profileForm.value.interested
+    this.student.recommend = this.profileForm.value.recommend
+    // student.lastName
+    this.studentService.save(this.student).subscribe(result => this.gotoStudentList());
+    // console.warn(this.student.id);
+    console.warn(this.student.street)
+    console.warn(this.student.liked)
+  }
+
+  gotoStudentList() {
+    this.router.navigate(['/students']);
   }
 
   onChangeCheckbox(name: string, isChecked: boolean) {
@@ -69,16 +103,11 @@ export class ProfileEditorComponent {
   }
   
   onChangeRadio(name: string, isRadioed: boolean) {
-    const radioFormArray = <FormArray>this.profileForm.controls.interested;
+    const radioForm = <FormControl>this.profileForm.controls.interested;
 
     if (isRadioed) {
-      // radioFormArray.patchValue(new FormControl(name));
-      radioFormArray.clear();
-      radioFormArray.push(new FormControl(name));
-    } else {
-      let index = radioFormArray.controls.findIndex(x => x.value == name)
-      radioFormArray.removeAt(index);
-    }
+      radioForm.setValue(new FormControl(name).value);
+    } 
   }
 
   updateProfile() {

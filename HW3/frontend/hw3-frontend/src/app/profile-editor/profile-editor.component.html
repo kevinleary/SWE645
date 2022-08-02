@@ -44,7 +44,7 @@
   <h2 for="interest">How did you become interested in the university?</h2>
   <legend>Interest:</legend>
   <div *ngFor="let r of radio">
-    <input type="radio" name=rad (change)="onChangeRadio(r.name, $event.target.checked)"> {{r.name}}<br>
+    <input type="radio" name=interested (change)="onChangeRadio(r.name, $event.target.checked)"> {{r.name}}<br>
   </div> 
 
   <h2 for="recommend">Likelihood to recommend to prospective students?</h2>
@@ -60,6 +60,7 @@
 <p>Complete the form to enable button.</p>
 <button type="submit" [disabled]="!profileForm.valid" (click)="onSubmit()">Submit</button>
 <button type="button" id="cancelbtn" onClick="location.href=location.href">Cancel</button>
+<button type="button" id="studentsbtn" routerLink="/students">List</button>
 
 <!-- <button type="button" (click)="updateProfile()">Update Profile</button> -->
 

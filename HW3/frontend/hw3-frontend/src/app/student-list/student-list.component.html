@@ -1,0 +1,60 @@
+<h1>Student List</h1>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Street</th>
+            <th scope="col">City</th>
+            <th scope="col">State</th>
+            <th scope="col">Zip Code</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Date</th>
+            <th scope="col">Liked</th>
+            <th scope="col">Interested</th>
+            <th scope="col">Recommend</th>
+            <!-- Add other fields -->
+          </tr>
+        </thead>
+              <tbody>
+                <tr *ngFor="let student of students">
+                  <td> {{ student.id }}</td>
+                  <td> {{ student.name }}</td>
+                  <td> {{ student.street }}</td>
+                  <td> {{ student.city }}</td>
+                  <td> {{ student.state }}</td>
+                  <td> {{ student.zip }}</td>
+                  <td> {{ student.email }}</td>
+                  <td> {{ student.phone }}</td>
+                  <td> {{ student.date }}</td>
+                  <td> {{ student.liked }}</td>
+                  <td> {{ student.interested }}</td>
+                  <td> {{ student.recommend }}</td>
+                  <!-- <td *ngIf="s.key=='id' && s.value!=''">{{ s.value | json }}</td>
+                  <td *ngIf="s.key=='firstName' && s.value!=''">{{ s.value }}</td> -->
+                <!-- <tr *ngIf="s.key=='firstName' && s.value!=''">{{ s.value | json }} -->
+                <!-- <td *ngIf="s.key=='id' && s.value!=''">{{ s.value | json }}</td> -->
+                <!-- <td *ngIf="s.key=='firstName' && s.value!=''">{{ s.value }}</td> -->
+                <!-- <td>{{ parseJson(student.value | json).firstName }}</td> -->
+                <!-- <td>{{ student.key }}:{{ student.value }}</td>
+                <td *ngIf="s.key=='id' && s.value!=''">{{ s.value }}</td>
+                <td>{{ student.key }}:{{ student.value }}</td>
+                <td>{{ student.key }}:{{ student.value }}</td>
+                <td>{{ student.key }}:{{ student.value }}</td>
+                <td>{{ student.key }}:{{ student.value }}</td> -->
+                <!-- <td><a href="mailto:{{ student.email }}">{{ student.email }}</a></td> -->
+                <!-- Add other fields -->
+                <!-- </tr> -->
+                </tr>
+              </tbody>
+              <!-- </div>
+            </div> 
+          </div> -->
+      </table>
+    </div>
+  </div>
+  <button type="button" id="backbtn" routerLink="">Go Back</button>
+  <!-- <router-outlet></router-outlet> -->
