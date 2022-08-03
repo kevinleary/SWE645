@@ -1,7 +1,5 @@
 package com.hw3.backend;
 
-import java.lang.Long;
-
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 import org.springframework.hateoas.EntityModel;
