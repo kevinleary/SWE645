@@ -6,6 +6,10 @@ Springboot Rest API starter
 
 https://spring.io/guides/tutorials/rest/
 
+https://spring.io/guides/gs/spring-boot-docker/
+
+needed to change the packaging in pom.xml to jar
+
 ## frontend
 
 https://angular.io/guide/reactive-forms

@@ -1,18 +1,8 @@
-FROM maven:3.6.3 AS maven
+FROM arm64v8/openjdk:11
+# FROM openjdk:11-jdk-alpine - windows
 
-WORKDIR /usr/src/app
-COPY . /usr/src/app
-# Compile and package the application to an executable JAR
-RUN mvn package 
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} backend-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/backend-0.0.1-SNAPSHOT.jar"]
 
-# For Java 11, 
-FROM adoptopenjdk/openjdk11:alpine-jre
-
-ARG JAR_FILE=hw3-backend.jar
-
-WORKDIR /opt/app
-
-# Copy the spring-boot-api-tutorial.jar from the maven stage to the /opt/app directory of the current stage.
-COPY --from=maven /usr/src/app/target/${JAR_FILE} /opt/app/
-
-ENTRYPOINT ["java","-jar","hw3-backend.jar"]
+EXPOSE 8080
