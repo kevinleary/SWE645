@@ -37,8 +37,8 @@ class LoadDatabase {
       ArrayList<String> likesArray = new ArrayList<String>();
       likesArray.add("Sports");
       likesArray.add("Dorm Rooms");
-      studentRepository.save(new Student("Kevin", "Leary", "839 N Lincoln Street", "Arlington", "VA", "22201",
-    		  "9732190441", "kleary5@gmu.edu", "July 31st 2022", likesArray, "Other", "Likely" ));
+      studentRepository.save(new Student("Kevin", "Leary", "123 Fuck You Road", "Arlington", "VA", "11102",
+    		  "123456789", "kleary5@gmu.edu", "July 31st 2022", likesArray, "Other", "Likely" ));
       
       studentRepository.findAll().forEach(student -> {
           log.info("Preloaded " + student);
